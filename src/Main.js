@@ -4,14 +4,8 @@ import Calculator from './Components/Calculator'
 
 const Main = (): React.Node => {
 
-const Styles = {
-  container:{
-    border: 'solid',
-  }
-}
-
   return (
-   <div style={Styles.container}>
+   <div>
    <Calculator/>
    </div>
   );
