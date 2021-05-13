@@ -6,9 +6,13 @@ const Button = (): React.Node => {
     const Styles ={
         container: {
             border: 'solid',
-            backgroundColor: 'white',
-            width: '50px',
-            height: '50px'
+            backgroundColor: 'grey',
+            width: '70px',
+            height: '70px',
+            display: 'flex',
+            alignItems: 'center',
+        justifyContent: 'center',
+            cursor: 'pointer',
         }
     }
 
