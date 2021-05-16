@@ -1,16 +1,20 @@
 // @flow
 import React from 'react';
-import * as ReactDOM from 'react-dom';
+import  ReactDOM from 'react-dom';
 import Main from './Main';
 import reportWebVitals from './reportWebVitals';
 
+const element =  document.getElementById('root');
+
+if (element){
 ReactDOM.render(
   <React.StrictMode>
     <Main />
   </React.StrictMode>,
-  //$FlowIgnore
-  document.getElementById('root')
+  element,
 );
+
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

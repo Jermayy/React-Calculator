@@ -12,7 +12,11 @@ const Button = (): React.Node => {
             display: 'flex',
             alignItems: 'center',
         justifyContent: 'center',
-            cursor: 'pointer',
+            // cursor: 'pointer',
+            ':hover':{
+                backgroundColor: 'blue',
+                cursor: 'hand'
+            }
         }
     }
 
