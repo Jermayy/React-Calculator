@@ -2,30 +2,34 @@
 
 import * as React from 'react';
 
-const Button = (): React.Node => {
+type Props = {
+    children: React.Node,
+}
+
+
+const Button = (children : Props): React.Node => {
     const Styles ={
         container: {
             border: 'solid',
-            backgroundColor: 'grey',
+            backgroundColor: '#737373',
             width: '70px',
             height: '70px',
             display: 'flex',
             alignItems: 'center',
         justifyContent: 'center',
-            // cursor: 'pointer',
+            cursor: 'pointer',
             ':hover':{
-                backgroundColor: 'blue',
-                cursor: 'hand'
+                backgroundColor: 'white',
             }
         }
     }
 
     return (
-        <>
+    
         <div style={Styles.container}>
-            #
+        {/* {children} */}
         </div>
-        </>
+
     )
 }
 
