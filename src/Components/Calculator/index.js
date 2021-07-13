@@ -8,16 +8,15 @@ const [value1, setValue1] = React.useState('');
 const [value2, setValue2] = React.useState('');
 const [modifier, setModifier] = React.useState('');
 const [switchVal, setSwitchVal] = React.useState(false);
-
+const [result, setResult] =React.useState('');
 
 React.useEffect(()=>{
 
-},[value1,value2,modifier]);
+},[value1,value2,modifier,result]);
 
 
-const valueString = (operand, value) =>{
-  
-  if (operand === false){
+const valueString = (operand, value)=>{
+    if (operand === false){
     let val = value1 + value;
     console.log(val);
     setValue1(val);
@@ -31,24 +30,43 @@ const valueString = (operand, value) =>{
 };
 
 const switchOperands = ()=> {
-
   if (switchVal === false){
     setSwitchVal(true)
     console.log('operand 2')
   }
-}
+};
 
 const chooseModifier  = (value)=>{
   setModifier(value);
-  switchOperands()
+  switchOperands();
   console.log(value);
-}
+};
+
+const calcTotal = (value1, value2, modifier)=>{
+  const val1 = parseInt(value1);
+  const val2 = parseInt(value2);
+
+  let result = 0;
+
+ if (modifier === '+'){
+   result = val1 + val2;
+ } else if (modifier === '-'){
+   result = val1 - val2;
+ } else if(modifier === 'x'){
+   result = val1 * val2;
+ } else if (modifier === '/'){
+   result = val1/val2;
+ }
+
+ setResult(result.toString());
+};
 
 const clearCalc = () =>{
   setValue1('');
   setValue2('');
   setModifier('');
   setSwitchVal(false);
+  setResult('')
 };
 
 
@@ -71,7 +89,7 @@ const Styles = {
 
   resultBox:{ 
     border: 'solid',
-    height: '12%',
+    height: '15%',
     width: '90%',
     backgroundColor: 'White',
     justifyContent: 'center',
@@ -87,6 +105,9 @@ return (
           {modifier}
         </div>
         {value2}
+        <div>
+        {result}
+        </div>
     </div>
 
 
@@ -103,10 +124,12 @@ return (
     <button onClick={()=>valueString(switchVal,8)}>8</button>
     <button onClick={()=>valueString(switchVal,9)}>9</button>
     <button onClick={()=>chooseModifier('x')}>X</button>
+    <button onClick={()=>valueString(switchVal,0)}>0</button>
     <button onClick={()=>clearCalc()}>Clear</button>
-    <button>Total</button>
+    <button onClick={()=>calcTotal(value1,value2,modifier)}>Total</button>
+     <button onClick={()=>chooseModifier('/')}>/</button>
     </div>
   </div>
-)}
+)};
 
 export default Calculator;
