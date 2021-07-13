@@ -1,36 +1,36 @@
-// @flow
+// // @flow
 
-import * as React from 'react';
+// import * as React from 'react';
 
-type Props = {
-    children: React.Node,
-}
+// type Props = {
+//     value: number,
+// }
 
 
-const Button = (children : Props): React.Node => {
-    const Styles ={
-        container: {
-            border: 'solid',
-            backgroundColor: '#737373',
-            width: '70px',
-            height: '70px',
-            display: 'flex',
-            alignItems: 'center',
-        justifyContent: 'center',
-            cursor: 'pointer',
-            ':hover':{
-                backgroundColor: 'white',
-            }
-        }
-    }
+// const Button = (value : Props): React.Node => {
+//     const Styles ={
+//         container: {
+//             border: 'solid',
+//             backgroundColor: '#737373',
+//             width: '70px',
+//             height: '70px',
+//             display: 'flex',
+//             alignItems: 'center',
+//         justifyContent: 'center',
+//             cursor: 'pointer',
+//             ':hover':{
+//                 backgroundColor: 'white',
+//             }
+//         }
+//     }
 
-    return (
+//     return (
     
-        <div style={Styles.container}>
-        {/* {children} */}
-        </div>
+//         <div style={Styles.container}>
+//         {value}
+//         </div>
 
-    )
-}
+//     )
+// }
 
-export default Button;
+// export default Button;
