@@ -76,83 +76,102 @@ const clearCalc = () =>{
 
 const Styles = {
   container:{
+    alignItems: 'center', 
     border: 'solid',
     backgroundColor: 'red',
-    width: '300px',
     height: '500px',
-    alignItems: 'center', 
-    justifyContent: 'center'
+    justifyContent: 'center',
+    width: '300px',
   },
   grid:{
     display: 'grid',
+    gap: '10px',
     gridTemplateColumns: 'auto auto auto auto',
     gridTemplateRows: 'auto auto auto auto',
-    gap: '10px',
     justifyContent: 'center'        
   },
-
   resultBox:{ 
+    backgroundColor: 'White',
     border: 'solid',
     height: '15%',
-    width: '90%',
-    backgroundColor: 'White',
     justifyContent: 'center',
-    margin: '10px'
+    margin: '10px',
+    width: '90%',
   },
   boxContent:{
+    display: 'flex',
+    justifyContent: 'space-between',
     margin: 0,
     padding: 0,
-    display: 'flex',
-    justifyContent: 'space-between'
   },
-  clear:{
+  valueBox:{
+    fontFamily: 'arial',
+    fontWeight: '800',
     margin: 0,
+    marginLeft:5,
+    marginRight: 5,
+    padding: 0,
+  },
+  value:{
+    margin: 0,
+    marginLeft:5,
+    padding: 0,
+  },
+  valueResult:{
+    margin: 0,
+    marginLeft:5,
+    marginTop:5,
     padding: 0,
   },
   modifierBox:{
-    display: 'table-cell',
     margin: 0,
+    marginRight:10,
+    marginTop:15,
     padding: 0,
-    verticalAlign: 'middle'
+  },
+  modifierValue:{
+    fontFamily: 'arial',
+    fontWeight: '800',
+    fontSize:'24px',
+    margin: 0,
+    marginLeft:5,
+    marginTop:5,
+    padding: 0,
   },
 }
 return (
   <div style={Styles.container}> 
-    Calculator
+    <h3 style={{fontFamily:'arial', marginLeft:'5%', color:'white '}}>Calculator</h3>
     <div style={Styles.resultBox}>
       <div style={Styles.boxContent}>
-       <div style={Styles.clear}> 
-        <p style={Styles.clear} >{value1}</p>
-        <p style={Styles.clear}>{value2}</p> 
-         <p>{result}</p>
-      </div>
-      <div style={Styles.modifierBox}>
-          <p style={Styles.clear}>{modifier}</p>
-      </div>
-      </div> 
-       
-     
-        
+        <div style={Styles.valueBox}> 
+          <p style={Styles.value} >{value1}</p>
+          <p style={Styles.value}>{value2}</p> 
+          <p style={Styles.valueResult}>{result}</p>
+        </div>
+        <div style={Styles.modifierBox}>
+            <p style={Styles.modifierValue}>{modifier}</p>
+        </div>
+      </div>    
     </div>
 
-
-   <div style={Styles.grid}>
-    <button onClick={()=>valueString(switchVal,1)}>1</button>
-    <button onClick={()=>valueString(switchVal,2)}>2</button>
-    <button onClick={()=>valueString(switchVal,3)}>3</button>
-    <button onClick={()=>chooseModifier('+')}>+</button>
-    <button onClick={()=>valueString(switchVal,4)}>4</button>
-    <button onClick={()=>valueString(switchVal,5)}>5</button>
-    <button onClick={()=>valueString(switchVal,6)}>6</button>
-    <button onClick={()=>chooseModifier('-')}>-</button>
-    <button onClick={()=>valueString(switchVal,7)}>7</button>
-    <button onClick={()=>valueString(switchVal,8)}>8</button>
-    <button onClick={()=>valueString(switchVal,9)}>9</button>
-    <button onClick={()=>chooseModifier('x')}>X</button>
-    <button onClick={()=>valueString(switchVal,0)}>0</button>
-    <button onClick={()=>clearCalc()}>Clear</button>
-    <button onClick={()=>calcTotal(value1,value2,modifier)}>Total</button>
-     <button onClick={()=>chooseModifier('/')}>/</button>
+    <div style={Styles.grid}>
+      <button onClick={()=>valueString(switchVal,1)}>1</button>
+      <button onClick={()=>valueString(switchVal,2)}>2</button>
+      <button onClick={()=>valueString(switchVal,3)}>3</button>
+      <button onClick={()=>chooseModifier('+')}>+</button>
+      <button onClick={()=>valueString(switchVal,4)}>4</button>
+      <button onClick={()=>valueString(switchVal,5)}>5</button>
+      <button onClick={()=>valueString(switchVal,6)}>6</button>
+      <button onClick={()=>chooseModifier('-')}>-</button>
+      <button onClick={()=>valueString(switchVal,7)}>7</button>
+      <button onClick={()=>valueString(switchVal,8)}>8</button>
+      <button onClick={()=>valueString(switchVal,9)}>9</button>
+      <button onClick={()=>chooseModifier('x')}>X</button>
+      <button onClick={()=>valueString(switchVal,0)}>0</button>
+      <button onClick={()=>clearCalc()}>Clear</button>
+      <button onClick={()=>calcTotal(value1,value2,modifier)}>Total</button>
+      <button onClick={()=>chooseModifier('/')}>/</button>
     </div>
   </div>
 )};
