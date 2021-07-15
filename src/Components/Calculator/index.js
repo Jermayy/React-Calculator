@@ -30,7 +30,7 @@ const valueString = (operand, value)=>{
 };
 
 const switchOperands = ()=> {
-  if (switchVal === false){
+  if (switchVal === false && value1 !== ''){
     setSwitchVal(true)
     console.log('operand 2')
   }
@@ -47,6 +47,10 @@ const calcTotal = (value1, value2, modifier)=>{
   const val2 = parseInt(value2);
 
   let result = 0;
+
+  if (value1 && !value2){
+    result = value1
+  }
 
  if (modifier === '+'){
    result = val1 + val2;
@@ -94,20 +98,41 @@ const Styles = {
     backgroundColor: 'White',
     justifyContent: 'center',
     margin: '10px'
-  }
+  },
+  boxContent:{
+    margin: 0,
+    padding: 0,
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  clear:{
+    margin: 0,
+    padding: 0,
+  },
+  modifierBox:{
+    display: 'table-cell',
+    margin: 0,
+    padding: 0,
+    verticalAlign: 'middle'
+  },
 }
 return (
   <div style={Styles.container}> 
     Calculator
     <div style={Styles.resultBox}>
-        {value1}
-        <div>
-          {modifier}
-        </div>
-        {value2}
-        <div>
-        {result}
-        </div>
+      <div style={Styles.boxContent}>
+       <div style={Styles.clear}> 
+        <p style={Styles.clear} >{value1}</p>
+        <p style={Styles.clear}>{value2}</p> 
+         <p>{result}</p>
+      </div>
+      <div style={Styles.modifierBox}>
+          <p style={Styles.clear}>{modifier}</p>
+      </div>
+      </div> 
+       
+     
+        
     </div>
 
 
