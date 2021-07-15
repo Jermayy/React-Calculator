@@ -50,9 +50,11 @@ const calcTotal = (value1, value2, modifier)=>{
 
   if (value1 && !value2){
     result = value1
-  }
+  } 
 
- if (modifier === '+'){
+if (modifier && !value2){
+  result = value1
+} else if (modifier === '+'){
    result = val1 + val2;
  } else if (modifier === '-'){
    result = val1 - val2;
@@ -60,7 +62,7 @@ const calcTotal = (value1, value2, modifier)=>{
    result = val1 * val2;
  } else if (modifier === '/'){
    result = val1/val2;
- }
+ } 
 
  setResult(result.toString());
 };
