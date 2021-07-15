@@ -52,19 +52,19 @@ const calcTotal = (value1, value2, modifier)=>{
     result = value1
   } 
 
-if (modifier && !value2){
-  result = value1
-} else if (modifier === '+'){
-   result = val1 + val2;
- } else if (modifier === '-'){
-   result = val1 - val2;
- } else if(modifier === 'x'){
-   result = val1 * val2;
- } else if (modifier === '/'){
-   result = val1/val2;
- } 
+  if (modifier && !value2){
+    result = value1
+    } else if (modifier === '+'){
+    result = val1 + val2;
+    } else if (modifier === '-'){
+    result = val1 - val2;
+    } else if(modifier === 'x'){
+    result = val1 * val2;
+    } else if (modifier === '/'){
+    result = val1/val2;
+  } 
 
- setResult(result.toString());
+  setResult(result.toString());
 };
 
 const clearCalc = () =>{
