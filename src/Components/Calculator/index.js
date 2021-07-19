@@ -64,7 +64,15 @@ const calcTotal = (value1, value2, modifier)=>{
     result = val1/val2;
   } 
 
+
+  if(modifier === '/' && value2 === '0'){
+    result = 'error';
+  };
+
   setResult(result.toString());
+  setValue1(result.toString());
+  setValue2('');
+
 };
 
 const clearCalc = () =>{
@@ -119,18 +127,28 @@ const Styles = {
     marginLeft:5,
     padding: 0,
   },
+  valueResultBox:{
+    margin: 0,
+    marginLeft:5,
+    marginTop:10,
+    padding: 0,
+    bottom:5
+  },
   valueResult:{
     margin: 0,
     marginLeft:5,
     marginTop:5,
     padding: 0,
+    bottom:5,
+    fontFamily: 'arial',
+    fontWeight: '800',
   },
   modifierBox:{
     margin: 0,
     marginRight:10,
     marginTop:15,
     padding: 0,
-  },
+   },
   modifierValue:{
     fontFamily: 'arial',
     fontWeight: '800',
@@ -147,14 +165,16 @@ return (
     <div style={Styles.resultBox}>
       <div style={Styles.boxContent}>
         <div style={Styles.valueBox}> 
-          <p style={Styles.value} >{value1}</p>
-          <p style={Styles.value}>{value2}</p> 
-          <p style={Styles.valueResult}>{result}</p>
+          <p style={Styles.value}> {value1} </p>
+          <p style={Styles.value}> {value2} </p> 
         </div>
         <div style={Styles.modifierBox}>
             <p style={Styles.modifierValue}>{modifier}</p>
         </div>
       </div>    
+        <div style={Styles.valueResultBox}>
+          <p style={Styles.valueResult}>{result}</p>
+        </div>
     </div>
 
     <div style={Styles.grid}>
